@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\Novana\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\Novana\\.nuget\\packages"
+    ]
+  }
+}

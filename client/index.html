@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projekti</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <script type="text/javascript" src="js/skripta.js"></script>
+  </head>
+  <body onload="loadIstrazivaci()">
+    <div class="container">
+      <!--Navigacija-->
+      <div id="navigation" class="text-center">
+        <h4>Korisnik nije prijavljen na sistem</h4>
+        <br />
+        <button class="btn btn-secondary w-25" onclick="showLogin()">Prijava</button><br /><br />
+        <button class="btn btn-warning w-25" onclick="showRegister()">Registracija</button><br /><br />
+      </div>
+
+      <!--Prijava-->
+      <div id="loginForm" style="display: none">
+        <h2 class="text-center">Prijava</h2>
+        <form method="post" action="post/" onsubmit="return loginUser()">
+          <table class="w-50 mx-auto">
+            <tr>
+              <td>Korisnicko ime:</td>
+              <td><input type="text" id="usernameLogin" /></td>
+            </tr>
+            <tr>
+              <td>Lozinka:</td>
+              <td><input type="password" id="passwordLogin" /></td>
+            </tr>
+            <tr>
+              <td colspan="2" id="passwordLoginGreska" class="text-danger text-center"></td>
+            </tr>
+            <tr>
+              <td colspan="2" class="text-center"><input type="submit" class="btn btn-danger w-25 mt-2" value="Prijavi se" /></td>
+            </tr>
+            <tr>
+              <td colspan="2" class="text-center"><button type="button" class="btn btn-secondary w-25" onclick="showNavigation()">Odustajanje</button></td>
+            </tr>
+          </table>
+        </form>
+      </div>
+      <br />
+
+      <!--Registracija-->
+      <div id="registerForm" style="display: none">
+        <h2 class="text-center">Registracija</h2>
+        <form method="post" action="post/" onsubmit="return registerUser()">
+          <table class="w-50 mx-auto">
+            <tr>
+              <td>Korisnicko ime:</td>
+              <td><input type="text" id="usernameRegister" /></td>
+            </tr>
+            <tr>
+              <td>Email:</td>
+              <td><input type="text" id="emailRegister" /></td>
+            </tr>
+            <tr>
+              <td>Lozinka:</td>
+              <td><input type="password" id="passwordRegister" /></td>
+            </tr>
+            <tr>
+              <td>Ponovi lozinku:</td>
+              <td><input type="password" id="confirmPasswordRegister" /></td>
+            </tr>
+            <tr>
+              <td colspan="2" class="text-center"><input type="submit" class="btn btn-success w-25 mt-2" value="Registruj se" /></td>
+            </tr>
+            <tr>
+              <td colspan="2" class="text-center"><button type="button" class="btn btn-danger w-25" onclick="showNavigation()">Odustajanje</button></td>
+            </tr>
+          </table>
+          <br />
+        </form>
+      </div>
+      <br />
+
+      <!--Header prijavljenog korisnika-->
+      <div id="userInfo" style="display: none" class="text-center">
+          <div id="prijavljenKorisnik"></div><br><br>
+          <button class="btn btn-danger" onclick="logout()">Odjava</button><br><br>
+        </div>
+      </div>
+
+      <!--Pretraga-->
+      <div id="pretraga" style="display: none">
+        <h2 class="text-center">Pretraga istrazivaca po zaradi</h2>
+        <form method="post" action="post/" onsubmit="return searchIstrazivaci()">
+          <table class="w-25 mx-auto">
+            <tr>
+              <td>Najmanje(din):</td>
+              <td><input type="number" step="0.01" id="zaradaMin"></td>
+            </tr>
+            <tr>
+              <td>Najvise(din):</td>
+              <td><input type="number" step="0.01" id="zaradaMax"></td>
+            </tr>
+            <tr>
+              <td colspan="2" class="text-center"><input type="submit" class="btn btn-success w-50 mt-2" value="Trazi"></td>
+            </tr>
+          </table>
+        </form>
+      </div>
+      <br />
+
+      <!--Istrazivaci-->
+      <div id="data"></div>
+      <br />
+
+      <!--Izmena-->
+      <div id="izmena" style="display: none">
+        <h2 class="text-center">Izmena izabranog istrazivaca</h2>
+        <form method="post" action="post/" onsubmit="return submitEditForm()">
+          <table class="w-40 mx-auto">
+            <tr>
+              <td>Ime:</td>
+              <td><input type="text" id="istrazivacIme" /></td>
+            </tr>
+            <tr>
+              <td>Prezime:</td>
+              <td><input type="text" id="istrazivacPrezime" /></td>
+            </tr>
+            <tr>
+              <td>Godina rodjenja:</td>
+              <td><input type="number" id="istrazivacGodinaRodjenja" /></td>
+            </tr>
+            <tr>
+              <td>Zarada (din):</td>
+              <td><input type="number" step="0.01" id="istrazivacZarada" /></td>
+            </tr>
+            <tr>
+              <td>Projekat:</td>
+              <td><select id="istrazivacProjekatId"></select></td>
+            </tr>
+            <tr>
+              <td colspan="2" class="text-center"><input type="submit" class="btn btn-primary w-50 mt-2" value="Potvrda" /></td>
+            </tr>
+            <tr>
+              <td colspan="2" class="text-center"><button type="button" class="btn btn-secondary w-50" onclick="cancelEdit()">Odustajanje</button></td>
+            </tr>
+          </table>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

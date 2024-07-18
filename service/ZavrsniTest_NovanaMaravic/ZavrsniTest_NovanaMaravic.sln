@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34009.444
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZavrsniTest_NovanaMaravic", "ZavrsniTest_NovanaMaravic\ZavrsniTest_NovanaMaravic.csproj", "{796CDB7A-4BF5-44D7-B5E8-8E678CE7E880}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZavrsniTest_NovanaMaravicTest", "ZavrsniTest_NovanaMaravicTest\ZavrsniTest_NovanaMaravicTest.csproj", "{7D80DC4D-D6AA-4907-AB85-D83D17E9EB2A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{796CDB7A-4BF5-44D7-B5E8-8E678CE7E880}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{796CDB7A-4BF5-44D7-B5E8-8E678CE7E880}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{796CDB7A-4BF5-44D7-B5E8-8E678CE7E880}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{796CDB7A-4BF5-44D7-B5E8-8E678CE7E880}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D80DC4D-D6AA-4907-AB85-D83D17E9EB2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D80DC4D-D6AA-4907-AB85-D83D17E9EB2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D80DC4D-D6AA-4907-AB85-D83D17E9EB2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D80DC4D-D6AA-4907-AB85-D83D17E9EB2A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EE20791B-5E1B-46EB-A220-E0F867BCFC0B}
+	EndGlobalSection
+EndGlobal
